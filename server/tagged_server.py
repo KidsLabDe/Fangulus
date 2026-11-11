@@ -16,7 +16,7 @@ ADMIN = os.environ.get("TAGGED_ADMIN", "")
 
 # Name (fuer Anzeige und Sprachausgabe, daher echte Umlaute) und LED-Farbe
 TEAMS = [("Rot", (255, 0, 0)), ("Blau", (0, 0, 255)), ("Grün", (0, 255, 0)), ("Gelb", (255, 160, 0))]
-STATIONS = 5
+STATIONS = 4
 OFFLINE_AFTER = 6.0  # Sekunden ohne Abfrage -> Station gilt als offline
 MAX_EVENTS = 50
 RESULT_GRACE = 30  # Sekunden nach Spielende, in denen ein Scan nur das Ergebnis zeigt statt neu zu starten

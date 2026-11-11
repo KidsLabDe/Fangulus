@@ -69,9 +69,9 @@ Am C6 Super Mini liegen die RC522-Pins nebeneinander auf der Leiste mit TX/RX; a
 
 ## Spiel
 
-Karten sind Spieler, Teams sind Farben, die 5 Stationen sind die „Türme“.
+Karten sind Spieler, Teams sind Farben, die 4 Stationen sind die „Türme“.
 
-- **Teams:** Eine neue Karte kommt beim ersten Scan an irgendeiner Station ins Team mit den wenigsten Leuten (bei Gleichstand zufällig). Die Station blinkt 3× in der Teamfarbe. Pro Team dürfen höchstens Stationen − 2 Leute sein, also 3 bei 5 Stationen. Weitere Karten blinken 2× weiß.
+- **Teams:** Eine neue Karte kommt beim ersten Scan an irgendeiner Station ins Team mit den wenigsten Leuten (bei Gleichstand zufällig). Die Station blinkt 3× in der Teamfarbe. Pro Team dürfen höchstens Stationen − 2 Leute sein, also 2 bei 4 Stationen. Weitere Karten blinken 2× weiß.
 - **Start:** Die erste Karte an einer Station startet das Spiel und erobert gleich diese Station (Autostart, in der Spielleitung abschaltbar, dann startet das Spiel per Knopf).
 - **Erobern:** Im laufenden Spiel wechselt eine Station mit einer Karte des anderen Teams die Farbe, die Farbe läuft einmal um den Ring. Danach ist sie für die Sperrzeit (Standard 20 s) geschützt, ein Versuch flackert nur.
 - **Punkte:** Erst wenn keine Station mehr neutral ist, bekommt jedes Team pro Sekunde 1 Punkt pro Station. Hält ein Team alle Stationen, zählt es doppelt, und alle Stationen pulsieren.

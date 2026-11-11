@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: kidslabde/tagged  # fest, nicht github.repository: das Repo heisst inzwischen Fangulus, der Server zieht aber tagged
 
 jobs:
   build:

@@ -117,7 +117,7 @@ svg { display: block; }
 .field::before, .field::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; }
 .field::before { top: 38%; background: var(--grain), var(--fibre), var(--color-hill-2); clip-path: var(--tear-hill); filter: var(--shadow-paper); }
 .field::after { height: 72px; background: var(--grain), var(--fibre), var(--color-kraft); clip-path: var(--tear-soil); }
-.stations { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-lg);
+.stations { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: var(--space-lg);
             max-width: 1120px; margin-inline: auto; padding: 0 var(--gutter) var(--space-lg); }
 .station { margin: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; align-content: start; gap: var(--space-sm); }
 .station svg { justify-self: stretch; margin-inline: auto; }
@@ -247,7 +247,7 @@ input[type=checkbox] { min-height: 0; width: 20px; height: 20px; accent-color: v
 </main>
 
 <section class="field" aria-label="Stationen">
-  <div class="stations demo" id="stations" data-boxes="1,2,3,4,5"><figure class="station" style="--i:0"><svg viewBox="0 0 84 152" role="img" aria-label="Station 1"><use href="#plate" class="plate"/><use href="#inlay1" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:1"><svg viewBox="0 0 84 152" role="img" aria-label="Station 2"><use href="#plate" class="plate"/><use href="#inlay2" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:2"><svg viewBox="0 0 84 152" role="img" aria-label="Station 3"><use href="#plate" class="plate"/><use href="#inlay3" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:3"><svg viewBox="0 0 84 152" role="img" aria-label="Station 4"><use href="#plate" class="plate"/><use href="#inlay4" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:4"><svg viewBox="0 0 84 152" role="img" aria-label="Station 5"><use href="#plate" class="plate"/><use href="#inlay5" class="inlay"/></svg><figcaption class="info"></figcaption></figure></div>
+  <div class="stations demo" id="stations" data-boxes="1,2,3,4"><figure class="station" style="--i:0"><svg viewBox="0 0 84 152" role="img" aria-label="Station 1"><use href="#plate" class="plate"/><use href="#inlay1" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:1"><svg viewBox="0 0 84 152" role="img" aria-label="Station 2"><use href="#plate" class="plate"/><use href="#inlay2" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:2"><svg viewBox="0 0 84 152" role="img" aria-label="Station 3"><use href="#plate" class="plate"/><use href="#inlay3" class="inlay"/></svg><figcaption class="info"></figcaption></figure><figure class="station" style="--i:3"><svg viewBox="0 0 84 152" role="img" aria-label="Station 4"><use href="#plate" class="plate"/><use href="#inlay4" class="inlay"/></svg><figcaption class="info"></figcaption></figure></div>
 </section>
 
 <div class="admin">
@@ -390,6 +390,7 @@ function render(s) {
   if (st.dataset.boxes !== boxes) {
     st.innerHTML = s.stations.map((x, i) => front(x.box, i)).join("");
     st.dataset.boxes = boxes;
+    st.style.setProperty("--n", s.stations.length);
   }
   s.stations.forEach((x, i) => {
     const el = st.children[i];
